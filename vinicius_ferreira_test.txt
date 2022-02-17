@@ -1,0 +1,55 @@
+def findMultiples (n:int):
+    multiples = []
+    for i in range(n):
+        if(i%3 == 0 and i%5==0):
+            multiples.append(i)
+    return multiples
+
+from findMultiples import findMultiples
+
+def printMultiples (n:int):
+    multiples = findMultiples(n)
+    print(' '.join(str(i) for i in multiples))
+
+def chessboard(N:int):
+    for i in range(N):
+        matrix_line = ''
+        if i%2==0:
+            matrix_line='* '*(int(N/2))
+        else:
+            matrix_line=' *'*(int(N/2))
+        print(matrix_line)
+    print('\n')
+
+def frame(N:int):
+    for i in range(N):
+        matrix_line = ''
+        if i == 0 or i == N-1:
+            matrix_line= '*'*N
+        else:
+            matrix_line = '*'+' '*(N-2)+'*'
+        print(matrix_line)
+    print('\n')
+
+def triangle(N:int):
+    for i in range(N):
+        matrix_line = ''+'*'*i
+        print(matrix_line)
+    print('\n')
+
+def print_descending_order_recursively(n:int):
+    string_result = str(n)
+    if n > 0:
+        string_result = string_result+print_descending_order_recursively(n-1)
+        return string_result
+    else:
+        print(string_result)
+
+def digit_sum(n:int):
+    number = n
+    result = 0
+    while number > 0:
+        digit = number % 10
+        number = number // 10
+        result += digit
+    return result
